@@ -6,16 +6,56 @@
         <title>Rock Paper Scissors game</title>
     </head>
     <body>
-        <p>ciao</p>
+        
         <script>
-            let arr = ["rock", "paper", "scissors"];
+           let arr = ["rock", "paper", "scissors"];
 
             function computer() {
 
-                console.log(arr[(math.floor(math.random() * arr.lenght))]);
-                
-            }
-        </script>
-    </body>
+                let comChoice = [(Math.floor(Math.random() * arr.length))];
+                return comChoice;
 
+            }
+
+            function userChoice() {
+
+                let Uchoice = prompt('Choose: "rock", "paper", "scissors"');
+                return Uchoice.toLowerCase();
+
+            }
+
+
+
+
+            function round() {
+
+                if (computer() === "rock" || userChoice() === "paper") {
+
+                    return console.log("You won! Paper beats rock")
+                    
+
+                } else if (computer() === "paper" || userChoice() === "rock") {
+
+                    return console.log("You lost! Paper beats rock")
+
+                } else if (computer() === "paper" || userChoice() === "scissors") {
+
+                    return console.log("You won! scissors beats paper")
+
+                } else if (computer() === "scissors" || userChoice() === "paper") {
+
+                    return console.log("You Lost! scissors beats paper")
+
+                } else if (computer() === "paper" || userChoice() === "scissors") {
+
+                    return console.log("You won! Paper beats rock")
+
+                }
+            }
+
+            console.log(userChoice());
+            console.log(round());
+
+    </script>
+  </body>
 </html>
