@@ -6,56 +6,92 @@
         <title>Rock Paper Scissors game</title>
     </head>
     <body>
-        
-        <script>
-           let arr = ["rock", "paper", "scissors"];
+    <script>
 
-            function computer() {
 
-                let comChoice = [(Math.floor(Math.random() * arr.length))];
-                return comChoice;
+        //output of a random choice between rock, paper, scissors
+        function getComputerChoice()  {
+            const choiceArr = ["rock", "paper", "scissors"];
+            const Cchoice = choiceArr[(Math.floor(Math.random() * choiceArr.length))];
+            return Cchoice
+        }     
 
-            }
-
-            function userChoice() {
-
-                let Uchoice = prompt('Choose: "rock", "paper", "scissors"');
-                return Uchoice.toLowerCase();
-
-            }
+        const Cchoice = getComputerChoice()
 
 
 
-
-            function round() {
-
-                if (computer() === "rock" || userChoice() === "paper") {
-
-                    return console.log("You won! Paper beats rock")
-                    
-
-                } else if (computer() === "paper" || userChoice() === "rock") {
-
-                    return console.log("You lost! Paper beats rock")
-
-                } else if (computer() === "paper" || userChoice() === "scissors") {
-
-                    return console.log("You won! scissors beats paper")
-
-                } else if (computer() === "scissors" || userChoice() === "paper") {
-
-                    return console.log("You Lost! scissors beats paper")
-
-                } else if (computer() === "paper" || userChoice() === "scissors") {
-
-                    return console.log("You won! Paper beats rock")
-
+        //input from the player
+        function Player(){
+            let validateInput = false;
+            while(validateInput == false) {
+                const Uchoice = prompt("Select between rock, paper, scissors");
+                
+                if (Uchoice == null) {
+                    continue
                 }
+
+                const inLower = Uchoice.toLower();
+                
+                if (choiceArr.includes(Uchoice)) {
+                    validateInput = true;
+                }
+
             }
 
-            console.log(userChoice());
-            console.log(round());
+            return Uchoice.toLowerCase()
+        }
 
-    </script>
+        const Uchoice = Player()
+
+
+
+        //implementation of first round
+        function checkWin(Uchoice, Cchoice) {
+            console.log(Uchoice, Cchoice);
+                if (Uchoice === Cchoice) {
+                
+                (console.log("Tie"));
+
+            } else if ((Uchoice == "rock" && Cchoice == "scissors" || Uchoice == "paper" && Cchoice == "rock" || Uchoice == "scissors" && Cchoice == "paper"))
+
+            {
+
+                console.log("player");
+
+            } else {
+
+                console.log("computer");
+            }
+            }
+
+
+        function game() {
+
+        Round(Uchoice, Cchoice)
+        Round(Uchoice, Cchoice)
+        Round(Uchoice, Cchoice)
+        Round(Uchoice, Cchoice)
+        Round(Uchoice, Cchoice)
+
+        }
+
+        game()
+
+
+        // Round(Uchoice, Cchoice);
+
+
+
+
+
+            
+     </script>
   </body>
 </html>
+
+
+
+
+
+
+
